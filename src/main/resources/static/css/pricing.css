@@ -1,0 +1,254 @@
+.pricecontainer {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.features-box {
+  background-color: orangered;
+  color: white;
+  padding: 50px;
+  border-radius: 10px;
+  width: 45%;
+}
+
+.features-box h2 {
+  margin-bottom: 20px;
+  font-size: 50px;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.feature {
+  background-color: white;
+  color: orangered;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 28px;
+  flex: 1 1 45%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feature.full {
+  flex: 1 1 100%;
+}
+
+.car-image{
+  width: 45%;
+}
+
+/* ============ MEDIA QUERIES ============ */
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+
+  }
+
+  .features-box,
+  .car-image {
+    width: 85%;
+    text-align: center;
+  }
+
+  .car-image img {
+    width: 800px;
+    padding-top: 40px;
+  }
+}
+
+/* Mobile Devices (≤ 768px) */
+@media (max-width: 768px) {
+  .features-box h2 {
+    font-size: 36px;
+  }
+
+  .feature {
+    font-size: 22px;
+    flex: 1 1 100%;
+  }
+
+  .car-image img {
+    width: 100%;
+    padding-top: 30px;
+  }
+}
+
+/* Small Phones (≤ 480px) */
+@media (max-width: 480px) {
+  .features-box {
+    padding: 30px 20px;
+  }
+
+  .features-box h2 {
+    font-size: 28px;
+  }
+
+  .feature {
+    font-size: 18px;
+  }
+
+  .car-image img {
+    width: 100%;
+    padding-top: 20px;
+  }
+}
+
+    .faq-container {
+      width: 100%;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 30px;
+    }
+
+    .faq {
+      border-bottom: 1px solid #ddd;
+    }
+
+    .faq-question {
+      padding: 15px;
+      cursor: pointer;
+      position: relative;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      font-size: 30px;
+    }
+
+    .faq.active .faq-question::after {
+      content: "-";
+      
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 15px;
+      background: #f1f1f1;
+      font-size: 18px;
+    }
+
+    .faq.active .faq-answer {
+      max-height: 200px;
+      padding: 15px;
+    }
+
+    .help-section {
+      text-align: center;
+      margin-top: 30px;
+      background-color:orangered;
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      font-size: 30px;
+    }
+
+    .help-buttons button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .whatsapp {
+      background-color: #25d366;
+      color: white;
+    }
+
+    .call {
+      background-color: #00aaff;
+      color: white;
+    }
+ @media (max-width: 768px) {
+  .faq-container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .faq-question {
+    font-size: 18px;
+  }
+
+  .faq-question::after {
+    font-size: 24px;
+  }
+
+  .faq-answer {
+    font-size: 16px;
+  }
+
+  .help-section {
+    font-size: 24px;
+    padding: 15px;
+  }
+
+  .help-buttons button {
+    font-size: 18px;
+    padding: 10px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 20px;
+  }
+
+  .faq-question {
+    font-size: 16px;
+  }
+
+  .faq-question::after {
+    font-size: 20px;
+  }
+
+  .faq-answer {
+    font-size: 14px;
+  }
+
+  .help-section {
+    font-size: 20px;
+  }
+
+  .help-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .help-buttons button {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 0;
+  }
+}

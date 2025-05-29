@@ -1,0 +1,149 @@
+.footer{
+  position: relative;
+  padding: 0% 1%;
+}
+.footer-car {
+    width: 95%; 
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-car1{
+    width: 95%;
+    border-radius: 40px;
+    
+}
+.footer .para{
+  position: absolute;    
+  top: 12%;
+  left: 64%;
+  width: 300px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+.footer .para h2{
+  font-size: 28px;
+}
+.footer .pstore img{
+    height: 10%;
+    width: 25%;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.footer .img-down{
+ display: flex;
+ justify-content: space-between;
+ padding: 5%;
+ 
+}
+.footer .sub{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.footer .foot{
+padding-left: 0%;
+display: flex;
+justify-content: space-evenly;
+}
+.footer .foot p{
+  font-weight: bold;
+}
+.footer ul a{
+    display: block;
+    padding-top: 10%;
+    color: gray;
+    text-decoration: none;
+}
+.footer .email{
+    height: 45px;
+    display: flex;
+}
+.footer input{
+    border: 1px solid gray;
+    height: inherit;
+    width: 390px;
+    text-align: center;
+    border-radius: 45px 0px 0px 45px;
+    font-size: 20px;
+    border-right: none;    
+}
+.footer .btn{
+    height: 45px;
+    border-radius: 0px 45px 45px 0px;
+     border: 1px solid gray;
+    border-left: none;
+    background-color: white;
+    padding-right: 15px;
+}
+.footer input:focus{
+outline: none;
+}
+.footer .copy{
+    color: gray;
+    font-size: 23px;
+   text-align: center;  
+}
+ /* For tablets (768px and below) */
+@media (max-width: 768px) {
+  .footer .car {
+    flex-direction: column;
+    margin-left: 0;
+    width: 95%;
+  }
+  .footer .para {
+    position: static;
+    font-size: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .footer .pstore img {
+    width: 40%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  .footer .img-down {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer ul a {
+    padding-top: 5%;
+  }
+  .footer .copy {
+    font-size: 18px;
+  }
+}
+/* For mobile phones (480px and below) */
+@media (max-width: 480px) {
+  .footer .car {
+    width: 100%;
+  }
+  .footer .para {
+    font-size: 90%;
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer .pstore img {
+    width: 60%;
+  }
+  .footer .img-down {
+    font-size: 110%;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+  .footer ul a {
+    font-size: 80%;
+  }
+  .footer .copy {
+    font-size: 16px;
+  }
+}

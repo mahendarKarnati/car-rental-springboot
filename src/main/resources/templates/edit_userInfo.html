@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>update details</title>
+ <link rel="stylesheet" th:href="@{/css/form.css}">
+ <link rel="icon" type="icon" th:href="@{/assets/companylogot.png}">
+</head>
+<body>
+  <div class="container">
+    <form class="form" th:action="@{/update-profile}" method="post"   th:object="${user}">
+    <input type="hidden" th:field="*{id}" />
+        <h2>Sign up</h2>
+        <input type="text" th:field="*{firstName}" required>
+        <input type="text" th:field="*{lastName}"  required>
+        <div class="phone-input">  
+            <select  class="country" th:field="*{country}">
+				<option th:field="*{country}" value="+91">India (+91)</option>
+                <option th:field="*{country}" value="+1">United States (+1)</option>
+                <option th:field="*{country}" value="+44">United Kingdom (+44)</option>
+                <option th:field="*{country}" value="+61">Australia (+61)</option>
+                <option th:field="*{country}" value="+81">Japan (+81)</option>
+                <option th:field="*{country}" value="+49">Germany (+49)</option>
+                <option th:field="*{country}" value="+33">France (+33)</option>
+                <option th:field="*{country}" value="+86">China (+86)</option>
+                <option th:field="*{country}" value="+971">United Arab Emirates (+971)</option>
+                <option th:field="*{country}" value="+880">Bangladesh (+880)</option>
+                <option th:field="*{country}" value="+92">Pakistan (+92)</option>
+                <option th:field="*{country}" value="+55">Brazil (+55)</option>
+                <option th:field="*{country}" value="+7">Russia (+7)</option>
+                <option th:field="*{country}" value="+20">Egypt (+20)</option>
+                <option th:field="*{country}" value="+234">Nigeria (+234)</option>
+            </select>
+            <input type="tel" th:field="*{mobile}" required style="flex: 1;">
+        </div>
+        <input type="email"th:field="*{username}" required>
+        <input type="text"th:field="*{password}" required>
+        <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

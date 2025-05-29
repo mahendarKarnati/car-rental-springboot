@@ -1,0 +1,84 @@
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #03bd09, #cdf00b);
+  background-image: url('https://assets.gqindia.com/photos/6644932501e2ecdaa5138025/master/w_1600%2Cc_limit/Bugatti-Divo.jpg');
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  background: rgba(255, 255, 255, 0.2); /* Transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: soft border */
+}
+
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  padding: 12px 10px;
+  margin-bottom: 16px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  font-size: 16px;
+}
+
+form input:focus {
+  border-bottom: 2px solid #8f44fd;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #4e73df, #8f44fd);
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: linear-gradient(to right, #3e63cf, #7e34ec);
+}
+
+.links {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.links a {
+  color: #0c12b9;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links a span {
+  color: #0874b2;
+}
+
+.links p {
+  margin-top: 10px;
+  font-size: 14px;
+}

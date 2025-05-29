@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="icon" type="icon" th:href="@{/assets/companylogot.png}">
+ <link rel="stylesheet" th:href="@{/css/form.css}" />
+</head>
+<body>
+  <div class="container">
+    <div class="login-box">
+      <form class="form" th:action="@{/login}" method="post">
+      <h2>Login</h2>
+		    <div th:if="${param.error}">
+		      <p style="color:red;">Invalid credentials or account not approved yet.</p>
+		    </div>
+        <input type="email" name="username" placeholder="Email" required />
+      <!--  <input type="password" name="password" placeholder="Password" pattern="[A-Z]{1}[a-z]{3}[0-9]{4}[@]{1}" title="include 1 uppercase 3 lowercase 4 digits and 1 special character(@ or #)" /> -->
+	  <input type="password" name="password" placeholder="Password"/>
+	          
+        <button type="submit">Login</button>
+        <div class="links">
+        <a th:href="@{/forgot-password}">Forgot Password?</a>
+        <p>Don't have an account? <a th:href="@{/register}">Sign up</a></p>
+      </div>
+      </form>
+      
+    </div>
+  </div>
+</body>
+</html>

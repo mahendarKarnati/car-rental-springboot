@@ -1,0 +1,128 @@
+
+    .how_to_work{
+      width: 50%;
+      height: 820px;
+      overflow: hidden;
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: url('/asset/samlog.jpg');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      border-radius: 10px;
+
+        }
+    h2 {
+      margin-top: 20px;
+      color: #111;
+      font-size: 1.2rem;
+    }
+
+    .subtitle {
+      color: #201c1c;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      padding-top: 30px;
+      font-weight: 30px;
+    }
+
+    .timeline {
+      position: relative;
+      margin: auto;
+    }
+    .timeline::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #9c1010;
+      transform: translateX(-50%);
+    }
+
+    .step {
+      padding: 5px;
+      position: relative;
+      width: 50%;
+      text-align: center;
+    }
+
+    .step.left {
+      left: 0;
+      top: -50%;
+    }
+
+    .step.right {
+      left: 50%;
+      top: -50%;
+    }
+    .step{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .content {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .step-icon img {
+      font-size: 2rem;
+      margin-bottom: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      height: 25px;
+      width: 30px;
+    }
+
+    .highlight {
+      background-color: #d61619;
+      color: white;
+      width:70px;
+    }
+
+    .highlight .step-icon {
+      color: white;
+    }
+
+    .step::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      z-index: 1;
+      left: calc(50% - 10px);
+    }
+
+    .step p {
+      margin: 0;
+      font-size: 12px;
+      color: #0e0b0b;
+    }
+
+    .step h3 {
+      margin: 10px 0 5px;
+      font-size: 1.2rem;
+      color: #111;
+      
+    }
+    .step right h3 , p {
+      padding-right: 50px;
+    }
+    .how_to_work2{
+      display: none;
+    }
+     @media screen and (max-width:480px) {
+       .how_to_work{
+        width: 450px;
+      }
+     }

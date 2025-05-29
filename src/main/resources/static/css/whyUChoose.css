@@ -1,0 +1,149 @@
+
+ .whyUChoose{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 2%;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+ }
+.why-choose {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+}
+.text-section {
+  flex: 1 1 40%;
+}
+.text-section h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.text-section p {
+  font-size: 20px;
+  color: #555;
+}
+.car-features {
+  position: relative;
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.car-image {
+  width: 100%;
+  max-width: 400px;
+  z-index: -1;
+  margin-left: 100px;
+}
+.feature-card {
+  position: absolute;
+  background: white;
+  padding: 10px 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.feature-card span {
+  display: none;
+  font-size: 13px;
+  font-weight: 400;
+  color: #555;
+  margin-top: 5px;
+  display: block;
+}
+.feature-card.top {
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.feature-card.center {
+  top: 30%;
+  left: 0;
+}
+.feature-card.bottom {
+  bottom: 0;
+  left: 68%;
+}
+.feature-card:hover {
+  background-color: #f7f7f7;
+  transform: scale(1.05);
+}
+.testimonials {
+  text-align: center;
+  background: #fdf7f7;
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.testimonials h2 {
+  font-size: 30px;
+  color: red;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  max-width: 1100px;
+  margin: 20px;
+  margin-left: 90px;
+  padding: 10px;
+}
+.image-card {
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 0px 0px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+  width:210px;
+  height:210px; 
+}
+.image-card img {
+  width: 210px;
+  height: 210px;
+  border-radius: 20px;
+}
+ @media  only screen and (max-width: 1000px) {
+      .why-choose {
+        flex-direction: column;
+      }
+      .car-image {
+  width: 600px;
+  max-width: 450px;
+  z-index: 1;
+  height: 290px;
+}
+.video-grid {
+  display: flex;
+ flex-direction:column ;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  max-width: 1100px;
+  margin: 20px;
+  margin-left: 90px;
+  padding: 10px;
+}
+    }
+    @media  only screen and (max-width: 480px) {
+      .car-features{
+       margin-top: 50px;
+       height: 800px;
+      }
+      .car-image{
+         width: 320px;
+        height: 200px;
+      }
+      .feature-card.bottom{
+        bottom: -50px;
+      }
+      .why-choose{
+        flex-direction: column;
+      }
+    }

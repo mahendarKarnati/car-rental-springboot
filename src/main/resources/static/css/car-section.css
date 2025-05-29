@@ -1,0 +1,101 @@
+	.carlist{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 50px;
+	padding: 80px 2%;
+}
+.carlist p{
+    font-size: 20px;
+    padding-top: 10px;
+}
+.cars{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    height: 116vh;
+    overflow: hidden;
+    width: 80%;
+}
+.car{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width:350px;
+    height: 400px;
+    gap: 20px;
+    border-radius: 8px;
+    background-color: hsl(0, 0%, 97%);
+    overflow: hidden;
+}
+.car:hover{
+    background-color: orangered;
+    color: white;
+}
+.car:hover button{
+    color: orangered;
+    background-color: white;
+    border: 2px solid;
+}
+.car img{
+    height: 250px;
+    width: 330px;
+    background-color: white;
+    transition: all 0.3s ease-in-out ;
+}
+.car img:hover{
+    transform: scale(115%);
+}
+.car .title{
+    margin-bottom: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.car .rent{
+    display: flex;
+    width: 330px;
+    align-items: center;
+    justify-content: space-around;
+}
+.car .rent .pricing{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+.car .pricing .starting{
+    color: gray;
+}
+.car button{
+    font-weight: 600;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background-color: orangered;
+    font-size: 14px;
+	width: 95px;
+	height: 40px;
+}
+.car button:hover{
+    cursor: pointer;
+	color: white;
+    background-color: orangered;
+}
+
+.more{
+    height: 40px;
+    width: 150px;
+    color: white;
+    border-radius: 15px;
+    background-color: orangered;
+    font-size: 20px;
+    border: 2px solid orangered;
+}
+.more:hover{
+    background-color: white;
+    color: orangered;
+} 

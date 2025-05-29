@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="icon" th:href="@{/assets/companylogot.png}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-label{
+            font-weight: bold;
+        }
+        body{
+            background: url('/asset/mainbg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .needs-validation{
+            background-color: transparent;
+        }
+        .form-control,.form-select{
+            background-color: rgba(192, 192, 192, 0.556);
+        }
+    </style>
+</head>
+<body class="bg-light">
+
+<div class="container my-5" style="background-color: transparent;">
+    <div class="card shadow" style="background-color: transparent; backdrop-filter:blur(5px);">
+        <div class="card-header bg-danger text-white" style="background-color: green;" >
+            <h3 class="mb-0">Update Product</h3>
+        </div>
+        <div class="card-body">
+            <form th:action="@{/update-product}" th:object="${product}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                <input type="hidden" th:field="*{id}" />
+
+                <div class="row g-3">
+                    <!-- Name -->
+                    <div class="col-md-6">
+                        <label class="form-label">Name</label>
+                        <input type="text" th:field="*{name}" class="form-control" required>
+                    </div>
+
+                    <!-- Model -->
+                    <div class="col-md-6">
+                        <label class="form-label">Model</label>
+                        <input type="text" th:field="*{model}" class="form-control" required>
+                    </div>
+
+                    <!-- Seating -->
+                    <div class="col-md-6">
+                        <label class="form-label">Seating Capacity</label>
+                        <input type="number" th:field="*{seating}" class="form-control" required>
+                    </div>
+
+                    <!-- Fuel Type -->
+                    <div class="col-md-6">
+                        <label class="form-label">Fuel Type</label>
+                        <select th:field="*{fuel}" class="form-select" required>
+                            <option value="">--Fuel Type--</option>
+                            <option value="Petrol">Petrol</option>
+                            <option value="Diesel">Diesel</option>
+                            <option value="Electric">Electric</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+
+                    <!-- Fuel Capacity -->
+                    <div class="col-md-6">
+                        <label class="form-label">Fuel Capacity</label>
+                        <input type="number" th:field="*{fuelcapacity}" class="form-control" required>
+                    </div>
+
+                    <!-- Transmission -->
+                    <div class="col-md-6">
+                        <label class="form-label">Transmission</label>
+                        <select th:field="*{transmission}" class="form-select" required>
+                            <option value="">--Transmission--</option>
+                            <option value="Manual">Manual</option>
+                            <option value="Automatic">Automatic</option>
+                            <option value="Automatic">Both</option>
+
+                        </select>
+                    </div>
+
+                    <!-- Horsepower -->
+                    <div class="col-md-6">
+                        <label class="form-label">Horsepower</label>
+                        <input type="number" th:field="*{horsepower}" class="form-control" required>
+                    </div>
+
+                    <!-- Body Type -->
+                    <div class="col-md-6">
+                        <label class="form-label">Body Type</label>
+                        <select th:field="*{body}" class="form-select" required>
+                            <option value="">--Body Type--</option>
+                            <option value="Hatchback">Hatchback</option>
+                            <option value="SUV">SUV</option>
+                            <option value="MPV">MPV</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="col-12">
+                        <label class="form-label">Description</label>
+                        <textarea th:field="*{description}" class="form-control" rows="3" required></textarea>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="col-md-6">
+                        <label class="form-label">Price</label>
+                        <input type="number" step="0.01" th:field="*{price}" class="form-control" required>
+                    </div>
+
+                    <!-- Current Image -->
+                    <div class="col-md-6">
+                        <label class="form-label d-block">Current Image</label>
+                        <img th:src="@{${product.imageUrl}}" alt="Product Image" class="img-thumbnail" style="max-width: 150px;">
+                    </div>
+
+                    <!-- Update Image -->
+                    <div class="col-md-12">
+                        <label class="form-label">Upload New Image</label>
+                        <input type="file" name="imageFile" accept="image/*" class="form-control">
+                    </div>
+					<!-- Current Image -->
+					                    <div class="col-md-6">
+					                        <label class="form-label d-block">Current Image</label>
+					                        <img th:src="@{${product.imageUrl2}}" alt="Product Image" class="img-thumbnail" style="max-width: 150px;">
+					                    </div>
+
+					                    <!-- Update Image -->
+					                    <div class="col-md-12">
+					                        <label class="form-label">Upload New Image</label>
+					                        <input type="file" name="imageFile2" accept="image/*" class="form-control">
+					                    </div>
+										<div class="col-md-6">
+										                        <label class="form-label d-block">Current Image</label>
+										                        <img th:src="@{${product.imageUrl3}}" alt="Product Image" class="img-thumbnail" style="max-width: 150px;">
+										                    </div>
+
+										                    <!-- Update Image -->
+										                    <div class="col-md-12">
+										                        <label class="form-label">Upload New Image</label>
+										                        <input type="file" name="imageFile3" accept="image/*" class="form-control">
+										                    </div>
+															<div class="col-md-6">
+															                        <label class="form-label d-block">Current Image</label>
+															                        <img th:src="@{${product.imageUrl4}}" alt="Product Image" class="img-thumbnail" style="max-width: 150px;">
+															                    </div>
+
+															                    <!-- Update Image -->
+															                    <div class="col-md-12">
+															                        <label class="form-label">Upload New Image</label>
+															                        <input type="file" name="imageFile4" accept="image/*" class="form-control">
+															                    </div>
+																				<div class="col-md-6">
+																				                        <label class="form-label d-block">Current Image</label>
+																				                        <img th:src="@{${product.imageUrl5}}" alt="Product Image" class="img-thumbnail" style="max-width: 150px;">
+																				                    </div>
+
+																				                    <!-- Update Image -->
+																				                    <div class="col-md-12">
+																				                        <label class="form-label">Upload New Image</label>
+																				                        <input type="file" name="imageFile5" accept="image/*" class="form-control">
+																				                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary px-5">Update Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap Bundle JS (Optional, for advanced components) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

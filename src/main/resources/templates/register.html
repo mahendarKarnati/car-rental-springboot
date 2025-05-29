@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+ <link rel="stylesheet" th:href="@{/css/form.css}">
+ <link rel="icon" type="icon" th:href="@{/assets/companylogot.png}">
+</head>
+<body>
+  <div class="container">
+    <form class="form" th:action="@{/register}" method="post">
+        <h2>Sign up</h2>
+        <p>already have an account &nbsp;<a th:href="@{/login}">Login</a></p>
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+        <div class="phone-input">  
+            <select  class="country" name="country">
+				<option name="country" value="+91">India (+91)</option>
+                <option name="country" value="+1">United States (+1)</option>
+                <option name="country" value="+44">United Kingdom (+44)</option>
+                <option name="country" value="+61">Australia (+61)</option>
+                <option name="country" value="+81">Japan (+81)</option>
+                <option name="country" value="+49">Germany (+49)</option>
+                <option name="country" value="+33">France (+33)</option>
+                <option name="country" value="+86">China (+86)</option>
+                <option name="country" value="+971">United Arab Emirates (+971)</option>
+                <option name="country" value="+880">Bangladesh (+880)</option>
+                <option name="country" value="+92">Pakistan (+92)</option>
+                <option name="country" value="+55">Brazil (+55)</option>
+                <option name="country" value="+7">Russia (+7)</option>
+                <option name="country" value="+20">Egypt (+20)</option>
+                <option name="country" value="+234">Nigeria (+234)</option>
+            </select>
+            <input type="tel" name="mobile" placeholder="Phone Number" required style="flex: 1;">
+        </div>
+        <input type="email" name="username" placeholder="Email" required>
+        <input type="password" name="password" placeholder="password" pattern="[A-Z]{1}[a-z]{3}[0-9]{4}[@,#]{1}" title="include 1 uppercase 3 lowercase 4 digits and 1 special character(@ or #)" required>
+		<input type="password" name="password" placeholder="password" required>
+		        
+        <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

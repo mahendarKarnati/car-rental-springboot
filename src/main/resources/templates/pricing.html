@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pricing</title>
+	<link rel="icon" type="icon" th:href="@{/assets/companylogot.png}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/pricing.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}">    
+	<script th:src="@{/js/scrollTopBtn.js}"></script>
+		<link rel="stylesheet" type="text/css" th:href="@{/css/scrollTopBtn.css}">    
+    <style>
+        *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    }
+	.webcontainer{
+	        display: flex;
+	        flex-direction: column;
+	        width: 100%;
+	    }   
+    </style>
+</head>
+<body>
+	<div class="webcontainer">
+	      <nav class="navbar navbar-expand-lg bg-body">
+	        <div class="container" id="navContainer">
+	          <a class="navbar-brand" href="/items"><img th:src="@{/assets/companylogot.png}" alt="" width="100px" height="45px"></a>
+	          <div class="space"></div>
+	          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+	            <ul class="navbar-nav">
+	              <li class="nav-item">
+	                <a class="nav-link active" aria-current="page" th:href="@{/home}">services</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" th:href="@{cars}">cars</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" th:href="@{pricing}">Pricing</a>
+	              </li>
+	              <li class="nav-item">
+	                <a class="nav-link" href="#footer">about us</a>
+	              </li>
+				  <!--<li class="nav-item" sec:authorize="hasRole('ADMIN')">
+				  	<a class="nav-link" href="/admin/dashboard">Dashboard</a>
+				  </li>-->
+				  <!-- Show dashboard button only if the user is an ADMIN -->
+				  <li th:if="${role == 'ROLE_ADMIN'}">
+				      <a class="nav-link" th:href="@{/dashboard}">Dashboard</a>
+				  </li>
+				  <!-- Show dashboard button only if the user is an ADMIN -->
+				  <li th:if="${role == 'ROLE_USER'}">
+				  		<a class="nav-link" th:href="@{/my-bookings}">Dashboard</a>
+				  </li>
+
+	            </ul>
+	          </div>
+			  <form th:action="@{/logout}" method="post">
+			  	<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+			  	<button class="logoutbtn" type="submit">Logout</button>
+			  </form>				
+	          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	          </button>
+	        </div>
+	      </nav><br><br><br>
+
+	  <div class="pricecontainer">
+    <div class="features-box">
+      <h2>Why Choose Us?</h2>
+      <div class="features">
+        <div class="feature"><span>₹</span> No Deposit</div>
+        <div class="feature"><span>🚗</span> 24/7 Breakdown Service</div>
+        <div class="feature"><span>⛽</span> Unlimited Kilometers</div>
+        <div class="feature"><span>🕒</span> Choose Your Own Hours</div>
+        <div class="feature full"><span>📷</span> Check Original Car Photos & Book</div>
+      </div>
+    </div>
+    <div class="car-image">
+      <img th:src="@{/assets/pricecar.png}" alt="Car Image" width="100%"/>
+    </div>
+  </div>
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <div class="faq-question">Documents Required?</div>
+      <div class="faq-answer">Age 18+</div>
+      <div class="faq-answer">You may need a valid Driving License and ID proof like Aadhaar or Passport.</div>
+      <div class="faq-answer">After Booking Successful you can Upload your selfie photo & Aadhar card & Driving License in App one time only from next booking documents not required.</div>
+      <div class="faq-answer">Our team will verify & Approve your documents.</div>
+      <div class="faq-answer">You must upload your documents before your pickup time otherwise your booking will be Auto cancelled no refund.</div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">Late Or Extension Rules?</div>
+      <div class="faq-answer">₹200/hr for 5 Seater.</div>
+      <div class="faq-answer">₹400/hr for 6,7,8 Seater.</div>
+      <div class="faq-answer">If You Extend More than 24hr before Return Time Same Price.</div>
+      <div class="faq-answer">If You Extend After Return Time, Then Double Amount will be charged.</div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">Pickup Car Location</div>
+      <div class="faq-answer">In My Trips You Will Get Exact Car Location After booking Successfully After Uploading Documents.</div>
+    </div>
+
+    <div class="faq">
+      <div class="faq-question">Refund & Cancellation Policy</div>
+      <div class="faq-answer">There is No Refund If you cancel the booking.</div>
+      <div class="faq-answer">As you are our Precious Customer.</div>
+      <div class="faq-answer">We Will Add same amount of LDC points into LDC Wallet if you Cancel the Booking before pickup Time only.</div>
+
+    </div>
+  </div>
+
+  <div class="help-section">
+    <h3>Need Help in Booking</h3>
+    <div class="help-buttons">
+      <button class="whatsapp">WhatsApp</button>
+      <button class="call">Call Us</button>
+    </div>
+  </div><br>
+        <footer class="footer" id="footer">
+          <div class="footer-car" >
+              <img class="footer-car1" th:src="@{/assets/footercar.jpg}" alt="car background "><br> 
+              <div class="para">
+                  <h2>Ready to Go?</h2>
+                  <p>Book your car wherever you are<br>and ride with us now!</p>
+                  <div class="pstore">
+                      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXsAAACFCAMAAACND6jkAAAAgVBMVEUAAAD///86OjqOjo6oqKj19fVfX19wcHCwsLB0dHTw8PBbW1vT09P8/PwVFRX4+Ph/f38eHh7c3Nzi4uKZmZnW1tbGxsZpaWm2trbq6upPT09GRka9vb0zMzOBgYFdXV3Ly8uVlZVBQUEhISEoKCiioqKJiYkRERE2NjYtLS0+Pj6DLcw+AAAQiUlEQVR4nO2dCXuqOhCGSQWqKHXBBdBjsS32tP//B15mErKwhLC03qN8z3PvqQIB3iSTyWTRIpKi6er4NOqndJzZgYzbEn+Gf6xRP60Pu4J98nLrx3oUhUX2z7d+ogfSXGG//Lr18zyUPiPBfnnrh3k4RZz9WOp/XT5jP9r631dM2Se3fo6H1BTZj87lTQTsw1s/xINqm7H/e+uHeFQRK7r1IzysdtZocm6lrbW69SM8rF6t+NaP8LBaW0+3foQH1k+wf5qcxmbEQIOzf0+XWX/ZGzrZe9TA7N9PNDY9sjfQsOynfOh30GTvVEOyf3P4WORuwGTvVgOyP0hj8Kfhkr1fDcf+Ks9/uAyW7B1rMPaujJ6M800MNBT7Pwp6Z6BU71tDsXcU9tuBUr1vDcTeVtCTz2FSvXMNw/5LRX+7iMLX8bhudcHn8dizbfo4Ht+7XTkM+73KvuXVL0/z+Txux6xGISGzVhfEvUvKhZBztysHYb9W0V9bXSxaik1/z3TadspLxn7a75YTQjoOggzCPlXQL9pdjNf4Pr3W7vkkv8meGasbs49k9G1nGGblHf9dzxbZ1UG/J/k99iufzPGPG7NXin3biQ9SRYmdPCO66vfYb8n/gr0cyCGtByEVI7UkZNLnUR6O/VaQ99s7bAr7DIUvPswNMzKe506SzP7PfP4hnfRZTG4+/6xm/4ZHZL3M58WTMuTH/I8VXqRU+I9SGmUNwV50rJIOV6uN846QA/4x39CGG17wD1nu6WHX95kPOV2Sbyv0N9YnOrgB5SrY2zB8RhzWw36xPUyOx1dp8kH8VmS/pqM/EfMbPd+24qD0bpGTOQdLx/Fdyn4LvkLk5ocn6LwFr/o3H4J9PmLitXOtmVT2V8YCVsY42IaD4+nlfYYMDMsFD8bGQrL8zPP9lT0Ksv9GFsCbjqBlyfkBIGS1CqsqnDMpsH9G8IBux24TzvI6LZ3m53c9APvZjn1iALJ8dRK4m97xH4590ol8kf2RFrAsyQhKPLz3Cj/Sco3z1kFf6I/aZBmQ9N067hgaxh46HFDiXxYMfrxHAxGykg/JQrtyhgeX2c8JsyARK+ge2ZBl9mYHh+c6PuZbVtlnx2PWI8zYR2T6ZX0n+bMtaBovGX0t3iHYx5PrrPs8H5X9J7qZMR/xxYnqgASNx5zsPII1m5pbsHbUEgf0fRn7HS9yGYdUSj6geLhP8LfA3smtOFS1Z3oBdZrXRO2vb/MkJry872glnfHGV8mustqzPz7PLjO3PoThTsIkSaaTg2GQoNAZQ/ZJjhStzAXKO5qAkNh7GgNYYObY3ILPaGyAsv8r9RNUZJTYVQQSpgr7lfjkUnc34CBPqgsl+zkLfkmCl+Q3D/XhlXbs52J1rhNW2JhjKq/edcKDQZoq+y80tNJEhxi/2NO3cIh7peWQQrI5jw+aDGWfSpZ2IbLxr3sIsSlPeOm2XhX22YG3/O8l3jLg+K6q+yuzz29Gs1yct9K73G3YT5T+a6a94nmtU48UtUzrEuNS2b9CSX6SKyuOxGTF2sV8gMyJsUsB97YJcflpUEwp+0Tq4aUsvoS9ZkLNuSfKo+pjRlJBTfBGgv2qnn3u32ORyR4tWFAF+sieOfuzXyKbsbXzBM6bisOENI+jqOy38IauHNhxsBVlTWsCfGx0cOBYDfuNhPCMBh+XVQb7kDaDvpjDorKXJxbRpNqzPytvPwT7j6CabNbI28/xZFF3NJP3rU1ZZR/BWK8rA/GR/QKqswe12wZwHjXYBuyv2F44rMmdMfaySathHyLcTuwvh1zPukbPkP1Kw7ZZWu9TYf+KJvOP/B2daJW9IXxtoRf6/s7c+Rr2e8nOTuH225zbytzmZBn40dHmGAbRzdjbzXy10sVoivEcgOkLBivqk2S03QtJ4BuHXFeso1PDfiLZLA9GMHlFOCOoRFx2VtjLvgx1LtuzN1+6acR+2ky3QZoOnsT+02ONbCi8co+V4YhsF7QCTclpylzLGvbQ12Vfz9BN4uV5j6BmIlwaKexd4Zwy51PHnnpxJfYb0ykyJuzTRrTNqg9tCPZwH/rqLySHus8PpyTxKYY58TbsvWvYwz8U7jdBd3LBzoOIK4By8opxIr4yZrjJPf8Zy75a9rwrUGI/N92gwoD98wDoCaltdDIfcpqm9gkd2FC65+kQryKlg8sczyXJgdSxh+LsXGMXKuyEJXd+modZ7x/rDiQWXWZbj0wjpe/5klm7YBUfID6HJqWWPRSP6dWuYI8W+rSaH86hfvFyM/vPGpjtVD8UK510Eh4RHxNI8m98botDngtTmX1gSWPlSX49vYZNTd9YzOfNZ9Hts1zidwC95P6cR3tfgv258BLUEH9aF7lvRSeFXfgbaSP7zezr/PY28jS3scM9aHophMgniygKpkf+eZXm7efRtpkb82zbeT/UTsG7mNk2u+IYBlGUcI/jeeFFSZYPts0yMN1E0SmzhBO74JUc9lEU7XPX7MLvGtu2q5x4zlJYfFqv/GmyZ2Cdmc9t9vDRYqrv1zeyH8Li9BsHvFs1snea0TYp+fnX+CfVxP7ajHYs9R3VxL5/sR/nJNepgb3bzLZJR/0dHlgN7PfNbBs0rrStVQP7/sX+d17jn5SefX+T03Oi6V1Lz75v/HLcg1AnPXvdkIiRxjXOGunZ9/YwR5OjkZZ9/zBa+703XTvTT2bZervAIuUl2xtvYKO9fdybffupsdTMdVxF06x1Ij9e8NZ8xc9Jy75/HK39A9HrWq5dMVbxjTquUhtGWvbnEssfZ3/ueqGR2LTWKAn3O5jyIoWa4m0wyGq7FtKy7x1Ia7/DOIwWwH/t1ssZ6gMfKmSDSW+2uAt2ZH57h9z/G3sCU9/JDwU/0dbLzT9fnjC7P/atTQdM6g1xpfRPLE2HdKvjSyN7anKecTC817KrauEEr+qO9j2yb+nDrWl+wch2z8WeVUrrS8P/j/1MQ9VMLdeiXAhOZUJPsNb9i11lDZuqb9etze9pPftD3aGjJj3rr6tM8c7ObbXAVcu+fxizZfQeJmjARAxCChMyVpvdBmeqbekcjmUoFdKvzW6HHYJnFn9KqmdiQc5WDOV8Z5djqjuQtLHAh80mvQfKTPZr9ixQpi6OnF8XNrlkYbLmgErL/q03+3Z7NaLJAagwZKOE4aAN3qtdI2luOUEI79JU6aQqeSxK5VU4hd47j2ec5G8l+mC6JrSc8PVvck/I2EXThzR6syf6+d8Fweo/XNuDJkBuFcH6LTAHqvgi+6NycFnlJ+GR0nqAavZPS/Vr0f5cMRGa0Yy9kk1kadhw6NmXF5K0VasNA6GK0+4OXCpXdHBREsgRf7o6rNhPo3GDhuzhf/vrYcZWv1TVuAseKZb8p2R/QmO1P8EkLfoATzSRyfHz3Q3VBJF9XgzwG0SPi3COeK5h5PyH4/et/PQv/jL4NvIbAPbIF1O7aUET8wGzcplVdhYUOKs5I4lZpfJCpFJbu5TPe8fsTNgnYH/Jjm+keeSiy4a/2ma2Z5meff/J320KPjc5jIVkr1irL6Y34ohaXhTpwYQfpFakyufIm4R9YQJi0ccMCwQx6sxaUWh0fDkD1Se7FrOxVnr2/YNpbTa3gNKVR1gg0iVtpkPZF2ZrcxpEzgjQpTbX+S85eso01QJ7DPzIe9tiYxJI50qWKy2c6xHD3S307D8GYG88NwrmyvMCE6o0KfvS2QwAkfKByimezhVzb8iT3M0Ce6xVijeKoaA3ca6U+LJQwODipP41hRqGbgqNfSeZxuJt+VyELd4IP6oFWdodwSHqbgdsv4SaGjfnwyfCqBTYQ9FVO9ZoBFNxrij2cbF8gU0yCiL++NyoErNaqXUVcl0MHSJ7tZOMeGkH1yFF7wVtRH1I6MIGorlVU9m/CNBcohThueJBt8U3hH0CjAx+A/shDL4hfGwg3VxYOEVxQvZq+4glkboaDinttEaIfqCehapy70Rlj3cr9E+hmnniXFGnsB+YSMJNRUwGS5uGiwdhb7Qle5VPxWlXsEeDT6tCBXuoRNqNJKjLk9sGlT2WuEKvEC2AOFeMcVWvDTGZl9TEvnZJczstG7bxsarno3DHpoI99gbO/NLW7GnHkRV8lf2kgh6w9yvOtYobHVDVR/uEmthPKlPuoFPDaGjlnAjegNaVe2oYatg3mDo0Wix3VZ5okApWo7bcA/vkOlFltNNnE/v3odhX9SZlhYh6zUWj7Xl1qWAvfVVj75s224RzmGOlsp+V74amRbL3qs1p3rGjSo3TgwYIKxixh86UEgbAoGZedCvYX+Ar+meZPXZMmsbbwZ6ylkhlj3Ww4CWJjCqwhwrRYN1q1Mi+304KsrRGB8MgaqMQCLiUvdpZBEeI9b7KPiZajaZVF7Xs5RrBFIvSU2APPma3X3xvnhZXtXVLF+l9HWpyFF3gKubpVYTe4RtWLcq92E05ubLgKtnei7DfTv1oseCd1K8V7I/lUmOoZvYDxNNQ+uHDkslhTU2+NyMmITsP+FjMCiF72UZgLWqa1Cn3kbDdFa3rSspYFDpVkXSdVInLnWBDGUwHHQa9vlriuxdH29Bzpn9S9lJUeS5/pu6p5Jg4BTxUhS98kTwtvFLp8ArPg46k7I9KaaF967KJtgF7dVCmq/Qt7UniwDURL8xiyHw4ji75zzuXrGuQf3xBUuVifyW2ZCrwIh7RUVLP78fhYynIG4Aie5oxHX5VyoD90yDs9feofHqcgk6NDrIAWil0Nw80GsbLGhzAzhSY3SM1khVjR3DVxn5+W6/jK3XfhKnAhn0Rr/880xaXJnJCPFe6xWx+aok9/Z0dP6Vt+9Nqb9SzMtvDZYiCry/2lSZHNjo0wqImKfIK2G8pzdwzqBoyLD2UZKVF4IoNubBA/zKIigmW2It+oc/28Tebwm7Cfogovv4O++pT0Ohga0j9+z9ySLswqmQrPZGk6jWK8RHFRvOrc8ulhhElP6DMXpkiATLz939p36iGGX5wSpXBhO/RN837Vnzx3UkOt7C+1Sof2t+4FWllik8iaORMC4Yhf0kxV9bm7vVJDjBUsM9q7o6nTIJ0uH2j+g+h9P5JVdGvdS+2vS2YJ96v/b7adrrSTdFYHyZ2lsCsis45O3JVOmTHa5p9ZTjqSVM+l3Zrr5UZ+0MD2yaZP0+NKmIKkiriOf+CDJd79Ru/6v+rno/MvldkobFz36yHZt9nyWFvi/Pg7Hss7x+CymOz77xn3SCLGB6cfVeTP8jCqUdn/90J/TDbRj06+05efscfoCkK2df0VmmN/Ad3zWi1nUP7mVJDLVFex5lq+6twsO1P+f0P1G4rjYqS74VX9/vpr3sNKxZKDFTq71QttzH5VgF7qbwa8CtV5zctb7pLx/9frbeQkfz84gICCzYTFoe7TVp5IHXYvuey8X0S2HVrGQ/pwvOiU8fftnwk3XjrpIfWyP52GtnfTiP722ncKfpWerHG3s+tNLf+wTDInehi/cAWQaOMtLAMp6+NGlzE+hdjr3ehCex8cuuHeFAtgX3/yTOj2iulO/50Wq8yqpdgXj3ONv2JbUBHaeXk7HvPVB3VUnQJJR1+Gkv+r4rO1mdrMXzzzZ1G9dU3G1nl62DGnwD7LfFfwZbWII3Dq7+hi5jdp6z/2m3dm/4GxZ1rPd8qm1P8B1bRwoZyLfJhAAAAAElFTkSuQmCC" alt="apple">
+                      <img src="data:image/png;base64,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" alt="playstore">
+                  </div>
+              </div>
+          </div>
+          <div class="img-down">
+              <div class="sub">
+                  <h1>Don't Miss a Thing</h1>
+                  <p class="sub">Subscribe to our newsletter for exclusive deals and updates</p>
+                  <div class="email">
+                      <input type="email" placeholder="Enter email address for newsletter " class="input" >
+                      <button class="btn" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/></svg>
+                      </button>
+                  </div>
+              </div><br>
+              <div class="foot">
+                  <ul>
+                      <p>Quick Link</p>
+                      <a href="">About us</a>
+                      <a href="">Who we are </a>
+                      <a href="">Contact Us</a>
+                  </ul>
+                  <ul >
+                      <p>The Cars</p>
+                      <a href="">How it works</a>
+                      <a href="">Pick a car </a>
+                      <a href="">FAQs</a>
+                  </ul>
+                  <ul >
+                      <p>Social Media</p>
+                      <a href="www.facebook.com">FaceBook</a>
+                      <a href="www.instagram.com">Instagram </a>
+                      <a href="www.twitter.com">Twitter</a>
+                  </ul>   
+              </div>
+          </div>
+            <p class="copy">Copyright @2025 SAMcars All reserved.</p>
+        </footer>
+     </div>
+	 <button id="scrollToTopBtn" title="Go to top"><i class="material-icons">north</i><i class="material-icons">north</i></button>
+ 
+</body>
+    <script>
+		const faqs = document.querySelectorAll('.faq');
+
+		    faqs.forEach(faq => {
+		      faq.addEventListener('click', () => {
+		        faq.classList.toggle('active');
+		      });
+		    });
+    </script>
+</html>

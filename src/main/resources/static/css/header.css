@@ -1,0 +1,158 @@
+      .navbar{
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+      }
+      .navbar .navConteainer{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .navbar .space{
+        width: 28%;
+      }
+      .navbar a:hover{
+        color: orangered;
+      }
+      .navbar .logoutbtn {
+        text-decoration: none;
+        border: 2px solid;
+        padding: 8px 16px;
+        border-radius: 50px;
+		font-weight: bold;
+		color: orangered;
+		background-color: white;
+      }
+      .navbar .logoutbtn:hover{
+        background-color: orangered;
+        color: white;
+      }
+      .banner{
+		width: 100%;
+        padding: 80px 2%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        background: url('/assets/mainbg.jpg');
+        height: 100vh;
+		background-repeat: no-repeat;
+      }
+      .left h1 {
+        font-size: 45px;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    	font-family:'Product Sans Serif', sans-serif;
+      }
+
+     .left p {
+        font-size: 16px;
+        color: #646060;
+        margin-bottom: 25px;
+      }
+
+      .left .get-started{
+        padding: 12px 24px;
+        background-color: orangered;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      .left .clogos{
+        display: flex;
+        gap: 5px;
+      }
+      .left .clogos img{
+        width: 35px;
+      }
+      .right{
+        display: flex;
+        position: relative;
+        width: 40%;
+        justify-content: space-between;
+      }
+      .right .tag-box {
+        background: rgba(255, 255, 255, 0.671);
+        height: 120px;
+        width: 120px;
+        padding: 0px 35px;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        position: relative;
+        top: 35%;
+
+      }
+      .tag-box h2 {
+        font-size: 24px;
+        color: #000;
+      }
+      .tag-box p {
+        font-size: 12px;
+        color: #888;
+      }
+      .rightright{
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+        width: 200px;
+        color: gray;
+        font-size: 12px;
+      }
+      .rightright .images{
+        display: flex;
+        gap: 8px;
+        margin-bottom: 8px;
+      }
+      .rightright .images img{
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .right .bottom{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+      }
+      .right .bottom a{
+        text-decoration: none;
+        color: orangered;
+        border: 1px solid;
+        text-align: center;
+        padding: 6px 8px;
+        border-radius: 22px;
+      }
+      .right .bottom a:hover{
+        color: white;
+        background-color: orangered;
+      }
+      .carlogos{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+      .carlogos .carlogo img{
+        width: 50px;
+      }
+      .carlogos .carlogo{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: center;
+      }
+      @media screen and (max-width:480px) {
+        .banner .left p{
+            color: black;
+        }
+        .banner .right{
+            gap: 50px;
+        }
+        .banner .rightright{
+            color: black;
+        }
+        .banner .rightright .top{
+            width: 200px;
+        }
+      }
